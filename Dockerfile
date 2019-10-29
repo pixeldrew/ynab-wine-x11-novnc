@@ -27,6 +27,7 @@ RUN wget -O - https://github.com/novnc/websockify/archive/v0.8.0.tar.gz | tar -x
 RUN wget -O - https://classic.youneedabudget.com/CDNOrigin/download/ynab4/liveCaptive/Win/YNAB%204_4.3.857_Setup.exe > /root/ynab-installer.exe
 RUN /usr/bin/xvfb-run /usr/bin/wine ynab-installer.exe /silent
 
+VOLUME /root/prefix32/drive_c/users/root
 EXPOSE 8080
 
 CMD ["/usr/bin/supervisord"]
